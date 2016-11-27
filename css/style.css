@@ -1,0 +1,175 @@
+/*общее для всех страниц*/
+body{
+	background-color: #282828;
+}
+a { 
+    text-decoration: none !important; /* Отменяем подчеркивание у ссылки */
+   } 
+/*верхняя линия*/
+
+.header-top {
+	/* Отступ для содержимого, помещенного в splash */
+	min-height: 115px;
+	/* Картинка, которая используются для splash */
+	background-image:url(../img/header_1.png);
+	/* Масштабируем картинку с сохранением пропорций */
+/*  	background-size:cover;
+	background-position: center*/
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;  
+	/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
+		background-attachment:fixed; 
+	/* Цвет текста */
+	color:#fff;
+	/* Выравниваем текста внутри splash по центру */
+	text-align:center;
+	position: relative;	
+}
+
+.nameOfCompany {
+	padding-left: 15px;
+	font-family: "BrushScriptStd" !important;
+	font-size: 72px;
+	color: #fff;
+}
+
+.writeToUs {
+	font-family: "PTSansBold";
+	font-size: 16px;	
+	color: #fff;
+}
+
+/*НАВИГАЦИЯ*/
+.header-second {
+	/* Отступ для содержимого, помещенного в splash */
+	min-height: 160px;
+	/* Картинка, которая используются для splash */
+ 	background-image:url(../img/header_bg.png);
+	/* Масштабируем картинку с сохранением пропорций */
+/*  	background-size:cover;
+	background-position: center; */
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover; 
+	/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
+		background-attachment:fixed; 
+	/* Цвет текста */
+	color:#fff;
+	/* Выравниваем текста внутри splash по центру */
+	text-align:center;
+	position: relative;	
+}
+
+.navigationIcon {
+	color: #286899;
+}
+.navigationIconActive {
+	color: #fff;
+}
+.navigationIcon:hover {
+	color: #fff;
+}
+.navigationBox {
+	padding-top: 31px;
+	min-height: 160px;
+	background-color: #00203c;
+box-shadow: 0 2px 4px #001529;
+}
+.navigationBoxActive {
+	padding-top: 31px;
+	min-height: 160px;
+}
+.navigationText {
+	font-family: "MyriadProRegular" !important;
+	font-size: 25px;
+	color: #fff;	
+}
+
+/*HEADER BAR START*/
+
+.header-bar {
+	/* Отступ для содержимого, помещенного в splash */
+	min-height: 150px;
+	/* Картинка, которая используются для splash */
+	background-image:url(../img/bar_line.png);
+	/* Масштабируем картинку с сохранением пропорций */
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
+		/* background-attachment:fixed;  */
+	/* Цвет текста */
+	color:#000;
+	font-family: "MyriadProRegular";
+	/* Выравниваем текста внутри splash по центру */
+	text-align:center;
+	position: relative;	
+}
+
+.characterOfCompany {
+	font-family: "BrushScriptStd";
+	font-size: 100px;
+	color: #b1b1b1;	
+}
+.blueNameCompany {
+	color: #006abb;
+}
+/*HEADER BAR END*/
+
+/*окно поиска*/
+.serchWindows {
+	height: 140px;
+	width: 273px;
+	margin-top: 27px;
+	box-shadow: 0 2px 4px #ababab;
+}
+
+.serchWindows .blueHeader {
+	height: 45px;
+	/* Картинка, которая используются для splash */
+	background-image:url(../img/searchWindowsHeader.png);
+	/* Масштабируем картинку с сохранением пропорций */
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "MyriadProRegular" !important;
+	font-size: 25px;
+	color: #fff;	
+}
+.serchWindows .searchBody {
+	padding-top: 15px;
+}
+/*FOOTER*/
+footer {
+	/* Отступ для содержимого, помещенного в splash */
+	min-height: 233px;
+	/* Картинка, которая используются для splash */
+	background-image:url(../img/footer.png);
+	/* Масштабируем картинку с сохранением пропорций */
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
+		/* background-attachment:fixed;  */
+	/* Цвет текста */
+	color:#fff;
+
+	font-family: "MyriadProRegular";
+	/* Выравниваем текста внутри splash по центру */
+	text-align:center;		
+}
+.footerBox{
+	min-height: 52px;
+	background-color: #00203c;
+box-shadow: 0 2px 4px #001529;	
+}
+.footerBoxText {
+	font-size: 20px;
+}
+.footerBoxTextMenu {
+	color: #a2b8c8;
+}
+.nameOfCompanyFooter {
+	font-family: "BrushScriptStd" !important;
+	font-size: 30px;
+	color: #fff;
+}
+/*FOOTER END*/

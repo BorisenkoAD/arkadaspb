@@ -1,0 +1,35 @@
+.project{
+		/* Отступ для содержимого, помещенного в splash */
+	padding-top: 36px;
+	min-height: 468px;
+	/* Цвет текста */
+	font-family: "ArialRegular";
+	ArialRegular
+	color:#000;
+	background-color: #eeeeee;
+	padding-bottom: 15px;
+		text-align:center;
+}
+.project p {
+text-indent: 25px;
+}
+.infoWindows {
+	margin-top: 27px;
+	box-shadow: 0 2px 4px #ababab;
+}
+
+.infoWindows .blueHeader {
+	height: 45px;
+	/* Картинка, которая используются для splash */
+	background-image:url(../img/searchWindowsHeader.png);
+	/* Масштабируем картинку с сохранением пропорций */
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "MyriadProRegular" !important;
+	font-size: 25px;
+	color: #fff;	
+}
+.infoWindows .infoBody {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}

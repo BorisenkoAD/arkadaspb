@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/normalize.css" rel="stylesheet">	
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/font.css">	
+	<link rel="stylesheet" href="css/style.css"> <!-- общие стили -->
+	<link rel="stylesheet" href="css/vacancy.css"> <!-- стили конкретной страницы -->
+	<link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- HTML-код модального окна -->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title form-heder">Анкета:</h4>
+      </div>
+      <!-- Основное содержимое модального окна -->
+      <div class="modal-body">
+        <!-- основное содержимое (тело) модального окна -->
+        <div class="container-fluid">
+          <!-- Контейнер, в котором можно создавать классы системы сеток -->
+						<form class="form-horizontal" method="post" action="anketa.php">			
+								<div class="row">	
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="position" class="col-xs-4 control-label"><span class="form__required">*</span> Вакансия:</label>
+											<div class="col-xs-8">
+												<select class="form-control form__select" name="position" id="position" required>
+													<option></option>
+													<option value="Менеджер строительных проектов">Менеджер строительных проектов</option>
+													<option value="Помощник управляющего проектами (строительство)">Помощник управляющего проектами (строительство)</option>
+													<option value="Менеджер проектов автоматизации">Менеджер проектов автоматизации </option>
+													<option value="Помощник управляющего проектами автоматизации">Помощник управляющего проектами автоматизации</option>
+													<option value="Менеджер технических проектов ">Менеджер технических проектов </option>
+													<option value="Помощник руководителя технических проектов">Помощник руководителя технических проектов</option>
+													<option value="Менеджер по развитию">Менеджер по развитию</option>
+													<option value="Специалист по внедрению АСУ ТП">Специалист по внедрению АСУ ТП</option>
+													<option value="Креативный менеджер">Креативный менеджер</option>
+													<option value="Технический писатель">Технический писатель</option>
+													<option value="Аналитик">Аналитик</option>
+													<option value="Инженер">Инженер</option>
+													<option value="Электромонтер/Электромонтажник">Электромонтер/Электромонтажник</option>
+													<option value="Ведущий юрист">Ведущий юрист</option>
+													<option value="IT-специалист">IT-специалист</option>
+													<option value="Инженер проектировщик ОВ, ВК">Инженер проектировщик ОВ, ВК</option>
+													<option value="Архитектор">Архитектор</option>
+													<option value="Офис менеджер">Офис менеджер</option>
+													<option value="Заведующий хозяйством в службу эксплуатации">Заведующий хозяйством в службу эксплуатации</option>
+													<option value="Главный инженер проекта">Главный инженер проекта</option>
+													<option value="HR менеджер">HR менеджер</option>
+													<option value="Инженер технического надзора">Инженер технического надзора</option>
+													<option value="Конструктор КЖ, КМ">Конструктор КЖ, КМ</option>			
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- НАЧАЛО -->
+								<!-- БЛОК РАЗДЕЛИТЕЛЬ -->
+								<div class="row">	
+									<div class="col-sm-10">
+										<h4 class="text-left text-primary">Общая информация</h4>
+									</div>
+								</div>
+								<!-- БЛОК РАЗДЕЛИТЕЛЬ -->								
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="schedule" class="col-xs-4 control-label"><span class="form__required">*</span> Пожелания по графику:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="schedule" id="schedule" required placeholder="Пятидневка"/>											
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="date_get_start" class="col-xs-4 control-label"><span class="form__required">*</span>  Когда готовы приступить к работе:</label>
+											<div class="col-xs-8">
+												<input type="date" class="form-control form__input" name="date_get_start" id="date_get_start" required/>												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->		
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="salary_desired" class="col-xs-4 control-label"> Желаемый месячный доход:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="salary_desired" id="salary_desired" placeholder="От 25 000 руб." />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->			
+								<!-- БЛОК РАЗДЕЛИТЕЛЬ -->
+								<div class="row">	
+									<div class="col-sm-10">
+										<h4 class="text-left text-primary">Контакты</h4>
+									</div>
+								</div>
+								<!-- БЛОК РАЗДЕЛИТЕЛЬ -->
+								<div class="row">	
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="Name" class="col-xs-4 control-label"><span class="form__required">*</span> Имя:</label>
+											<div class="col-xs-8">
+												<input type="text" maxlength="15" class="form-control form__input" name="Name" id="Name" required placeholder="Ваше имя"/>	
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="LastName" class="col-xs-4 control-label"><span class="form__required">*</span> Фамилия:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="LastName" id="LastName" required placeholder="Ваша фамилия"/>
+											</div>
+										</div>
+									</div>							
+								</div>	
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="DLastName" class="col-xs-4 control-label">Отчество:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="DLastName" id="DLastName" placeholder="Ваше Отчество"/>
+											</div>
+										</div>
+									</div>							
+								</div>									
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="Email" class="col-xs-4 control-label"><span class="form__required">*</span> E-mail:</label>
+											<div class="col-xs-8">						
+												<input type="email" class="form-control form__input" name="Email" id="Email" required placeholder="Ваш E-mail"/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="Tel" class="col-xs-4 control-label"><span class="form__required">*</span> Телефон:</label>
+											<div class="col-xs-8">
+												<input type="tel" pattern="\(\d\d\d\) ?\d\d\d-\d\d-\d\d" class="form-control form__input" name="Tel" id="Tel" required placeholder="(###) ###-##-##"/>
+											</div>
+										</div>
+									</div>					
+								</div>
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="citizenship" class="col-xs-4 control-label">Гражданство:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="citizenship" id="citizenship" placeholder="Гражданство" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="place_liv" class="col-xs-4 control-label">Место проживания:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="place_liv" id="place_liv" placeholder="Место проживания" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="birthday" class="col-xs-4 control-label"><span class="form__required">*</span> Дата рождения:</label>
+											<div class="col-xs-8">
+												<input type="date" class="form-control form__input" name="birthday" id="birthday" placeholder="Дата рождения:" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->	
+								<!-- БЛОК РАЗДЕЛИТЕЛЬ -->
+								<div class="row">	
+									<div class="col-sm-10">
+										<h4 class="text-left text-primary">Профессиональная деятельность</h4>
+									</div>
+								</div>
+								<!-- БЛОК РАЗДЕЛИТЕЛЬ -->	
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="Company_name" class="col-xs-4 control-label">Компания:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="Company_name" id="Company_name" placeholder="Наименование" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="post" class="col-xs-4 control-label">Должность:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="post" id="post" placeholder="Должность" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->	
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="start_job" class="col-xs-4 control-label"><span class="form__required">*</span> Начало работы:</label>
+											<div class="col-xs-8">
+												<input type="month" class="form-control form__input" name="start_job" id="start_job" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="end_job" class="col-xs-4 control-label"><span class="form__required">*</span> Окончание работы:</label>
+											<div class="col-xs-8">
+												<input type="month" class="form-control form__input" name="end_job" id="end_job"/>												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->	
+								<div class="row">
+									<div class="col-sm-10">	
+										<div class="form-group">
+											<label for="responsibilities" class="col-xs-4 control-label"><span class="form__required">*</span>  Обязанности/Достижения:</label>
+											<div class="col-xs-8">						
+												<textarea maxlength="350" class="form-control form__textarea" required placeholder="Обязанности и достижения на последнем месте работы, не более 350 знаков"  name="responsibilities" id="responsibilities" rows="3"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>	
+								<div class="row">
+									<div class="col-sm-10">	
+										<div class="form-group">
+											<label for="skills" class="col-xs-4 control-label"><span class="form__required">*</span> Ключевые навыки:</label>
+											<div class="col-xs-8">						
+												<textarea maxlength="350" class="form-control form__textarea" required placeholder="Приобретенные навыки, не более 350 знаков"  name="skills" id="skills" rows="3"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>	
+								<!-- БЛОК РАЗДЕЛИТЕЛЬ -->
+								<div class="row">	
+									<div class="col-sm-10">
+										<h4 class="text-left text-primary">Образование</h4>
+									</div>
+								</div>
+								<!-- БЛОК РАЗДЕЛИТЕЛЬ -->								
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="Institute" class="col-xs-4 control-label"> Учебное заведение:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="Institute" id="Institute" placeholder="Учебное заведение" />												
+											</div>
+										</div>
+									</div>							
+								</div>								
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="speciality" class="col-xs-4 control-label">Специальность:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="speciality" id="speciality" placeholder="Специальность" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="diplom" class="col-xs-4 control-label">Вид диплома, степень:</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control form__input" name="diplom" id="diplom" placeholder="Бакалавр, сертификат" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<!-- КОНЕЦ -->	
+								<!-- НАЧАЛО -->
+								<div class="row">
+									<div class="col-sm-10">
+										<div class="form-group">
+											<label for="Grad_year" class="col-xs-4 control-label">Год окончания:</label>
+											<div class="col-xs-8">
+												<input type="month" class="form-control form__input" name="Grad_year" id="Grad_year" />												
+											</div>
+										</div>
+									</div>							
+								</div>
+								<div class="row">
+									<div class="col-sm-10">	
+										<div class="checkbox">
+																				
+											<label>
+											<input type="checkbox" required><h5 class="text-left text-primary"><span class="form__required"> * </span>Подтверждаю право работодателя на обработку персональных данных, указанных мною.</h5>
+											</label>
+										</div>
+								</div>		  
+      <!-- Футер модального окна -->
+    <div class="modal-footer">
+		<div class="row">
+			<div class="col-sm-10">
+				<div class="form-group">
+					<div class="col-xs-3"></div>
+						<div class="col-xs-9">
+							<button type="submit" class="btn btn-primary" name="send">Отправить</button>
+						</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+		</form>			
+    </div>
+    </div>
+  </div>
+</div>	
+</div>
+</div>
+<!-- /HTML-код модального окна -->
+<div class="container">
+	<header>
+	<section class="header-top">
+		<div class="row">
+			<div class="col-sm-6 text-left">
+				<a href="www.arkadaspb.ru"><span class="nameOfCompany">Arkada</span></a>
+			</div>
+			<div class="col-sm-6 text-right" style="padding-top: 31px; padding-right: 30px;">
+				<span class="writeToUs">Напишите нам</br><a href="mailto:info@arkadaspb.ru">info@arkadaspb.ru</a></span>
+			</div>
+		</div>	
+	</section>
+	<section class="header-second">	
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-2 navigationBox text-uppercase">
+				<a href="\">
+				<span class="fa-stack fa-2x navigationIcon">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-home fa-stack-1x"></i>
+				</span>	
+				</br><span class="navigationText">Главная</span>
+				</a>
+			</div>
+			<div class="col-sm-2 navigationBox text-uppercase">
+				<a href="project.html">
+				<span class="fa-stack fa-2x navigationIcon">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-globe fa-stack-1x"></i>
+				</span>	
+				</br><span class="navigationText">проекты</span>	
+				</a>
+			</div>
+			<div class="col-sm-2 navigationBoxActive text-uppercase">
+				<a href="vacancy.html">
+				<span class="fa-stack fa-2x navigationIconActive">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-cog fa-stack-1x"></i>
+				</span>	
+				</br><span class="navigationText">вакансии</span>	
+				</a>				
+			</div>
+			<div class="col-sm-2 navigationBox text-uppercase">
+				<a href="rewiews.html">			
+				<span class="fa-stack fa-2x navigationIcon">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-commenting fa-stack-1x"></i>
+				</span>	
+				</br><span class="navigationText">отзывы</span>		
+				</a>				
+			</div>
+			<div class="col-sm-2 navigationBox text-uppercase">
+				<a href="contact.html">
+				<span class="fa-stack fa-2x navigationIcon">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-envelope fa-stack-1x"></i>
+				</span>	
+				</br><span class="navigationText">контакты</span>	
+				</a>				
+			</div>		
+			<div class="col-sm-1"></div>		
+		</div>
+	</section>
+	<section class="header-bar">		
+		<div class="row">
+			<div class="col-sm-2">
+				<span class="characterOfCompany">B</span>
+			</div>
+			<div class="col-sm-10">
+				<h2><p class="text-left">Мы можем предложить <span class="blueNameCompany">Вам работу!</span></p></h2>
+				<p class="text-left">Работа в ООО Аркада  - это стабильность, карьерный рост, работа в команде с профессианалами своего дела,</br> хороший заработок, возможность реализовать свои идеи, а также это отличный старт для Вашей карьеры.</p>
+			</div>
+		</div>
+	</section>
+	</header>
+</div>	
+<div class="container">
+ 	<section class="vacancy">
+	<span class="title">Наши вакансии</span>
+		<div class="row" style="padding-top: 10px;  padding-bottom: 10px;">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-4">
+				<div class="vacancyWindows">
+				<a class="various" data-fancybox-type="iframe" href="vacancy/vacancy1.htm"><p class="title">Менеджер строительных проектов</p></a>
+				<p class="text">Опыт работы от 1 года</br>Заработная плата 35 000 – 50 000 руб</p>				
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4">
+				<div class="vacancyWindows">
+				<a class="various" data-fancybox-type="iframe" href="vacancy/vacancy1.htm"><p class="title">Менеджер строительных проектов</p></a>
+				<p class="text">Опыт работы от 1 года</br>Заработная плата 35 000 – 50 000 руб</p>				
+				</div>
+			</div>
+			<div class="col-sm-1"></div>			
+		</div>
+		<div class="row" style="padding-top: 10px;  padding-bottom: 10px;">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-4">
+				<div class="vacancyWindows">
+				<a class="various" data-fancybox-type="iframe" href="vacancy/vacancy1.htm"><p class="title">Менеджер строительных проектов</p></a>
+				<p class="text">Опыт работы от 1 года</br>Заработная плата 35 000 – 50 000 руб</p>				
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4">
+				<div class="vacancyWindows">
+				<a class="various" data-fancybox-type="iframe" href="vacancy/vacancy1.htm"><p class="title">Менеджер строительных проектов</p></a>
+				<p class="text">Опыт работы от 1 года</br>Заработная плата 35 000 – 50 000 руб</p>				
+				</div>
+			</div>
+			<div class="col-sm-1"></div>			
+		</div>	
+		<div class="row" style="padding-top: 10px;  padding-bottom: 10px;">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-4">
+				<div class="vacancyWindows">
+				<a class="various" data-fancybox-type="iframe" href="vacancy/vacancy1.htm"><p class="title">Менеджер строительных проектов</p></a>
+				<p class="text">Опыт работы от 1 года</br>Заработная плата 35 000 – 50 000 руб</p>				
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4">
+				<div class="vacancyWindows">
+				<a class="various" data-fancybox-type="iframe" href="vacancy/vacancy1.htm"><p class="title">Менеджер строительных проектов</p></a>
+				<p class="text">Опыт работы от 1 года</br>Заработная плата 35 000 – 50 000 руб</p>				
+				</div>
+			</div>
+			<div class="col-sm-1"></div>			
+		</div>	
+		<div class="row" style="padding-top: 10px;  padding-bottom: 10px;">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-4">
+				<div class="vacancyWindows">
+				<a class="various" data-fancybox-type="iframe" href="vacancy/vacancy1.htm"><p class="title">Менеджер строительных проектов</p></a>
+				<p class="text">Опыт работы от 1 года</br>Заработная плата 35 000 – 50 000 руб</p>				
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4">
+				<div class="vacancyWindows">
+				<a class="various" data-fancybox-type="iframe" href="vacancy/vacancy1.htm"><p class="title">Менеджер строительных проектов</p></a>
+				<p class="text">Опыт работы от 1 года</br>Заработная плата 35 000 – 50 000 руб</p>				
+				</div>
+			</div>
+			<div class="col-sm-1"></div>			
+		</div>			
+			<button type="submit" class="btn btn-primary">Заполнить анкету
+	</section> 
+</div>
+<div class="container">
+	<footer>
+		<div class="row" style="margin-left: 0px; margin-right: 0px; padding-top: 22px;">
+			<div class="col-sm-3  footerBoxText">
+				Меню сайта
+			</div>
+			<div class="col-sm-6  footerBoxText">
+				Контактные данные
+			</div>
+			<div class="col-sm-3 ">
+				<span class="nameOfCompanyFooter">Arkada</span>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 22px;">
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="col-sm-6 text-right footerBoxTextMenu">
+					<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+					</div>
+					<div class="col-sm-6 text-left footerBoxTextMenu"><a href="\">главная</a></div>					
+				</div>
+				<div class="row">
+					<div class="col-sm-6 text-right">
+					<i class="fa fa-angle-double-right footerBoxTextMenu" aria-hidden="true"></i>
+					</div>
+					<div class="col-sm-6 text-left footerBoxTextMenu"><a href="project.html">проекты</a></div>					
+				</div>
+				<div class="row">
+					<div class="col-sm-6 text-right">
+					<i class="fa fa-angle-double-right footerBoxTextMenu" aria-hidden="true"></i>
+					</div>
+					<div class="col-sm-6 text-left footerBoxTextMenu"><a href="vacancy.html">вакансии</a></div>					
+				</div>
+				<div class="row">
+					<div class="col-sm-6 text-right">
+					<i class="fa fa-angle-double-right footerBoxTextMenu" aria-hidden="true"></i>
+					</div>
+					<div class="col-sm-6 text-left footerBoxTextMenu"><a href="rewiews.html">отзывы</a></div>					
+				</div>
+				<div class="row">
+					<div class="col-sm-6 text-right">
+					<i class="fa fa-angle-double-right footerBoxTextMenu" aria-hidden="true"></i>
+					</div>
+					<div class="col-sm-6 text-left footerBoxTextMenu"><a href="contact.html">контакты</a></div>					
+				</div>				
+			</div>
+			<div class="col-sm-6">
+				<div class="row">
+				<ins><span class="footerBoxTextMenu">Адрес</span></ins></br>
+				Санкт-Петербург, м. Ладожская, </br>Проспект Косыгина, 21 лит. А </br>
+				<ins><span class="footerBoxTextMenu">Email</span></ins></br>
+				<a href="mailto:info@arkadaspb.ru">info@arkadaspb.ru</a></br>
+				<ins><span class="footerBoxTextMenu">Телефон</span></ins></br>
+				8(812)577-24-99
+				</div>
+			</div>
+			
+		</div>		
+	</footer>
+</div>
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="libs/owl-carousel/owl.carousel.js"></script>
+	<script src="js/jquery.scrollUp.min.js" type="text/javascript"></script>	
+	<script src="js/myscripts.js" type="text/javascript"></script>	
+	<script type="text/javascript" src="libs/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<!-- <script src="js/myscripts.js" type="text/javascript"></script>			 -->
+	<script>
+	// всплывающие окна с текстом вакансий
+	jQuery(document).ready(function() { 
+		$(".various").fancybox({
+			maxWidth	: 800,
+			maxHeight	: 600,
+			fitToView	: false,
+			width		: '70%',
+			height		: '70%',
+			autoSize	: false,
+			closeClick	: false,
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
+	});	
+	//при нажатию на любую кнопку, имеющую класс .btn открыть модальное окно с id="myModal"
+	jQuery(document).ready(function(){	  
+		$(".btn").click(function() {
+			$("#myModal").modal('show');
+			});
+		});
+		$.stellar();
+	</script>
+  </body>
+</html>

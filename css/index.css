@@ -1,0 +1,50 @@
+.header-splash {
+	/* Отступ для содержимого, помещенного в splash */
+	min-height: 390px;
+	/* Картинка, которая используются для splash */
+	background-image:url(../img/header_splash.png);
+	/* Масштабируем картинку с сохранением пропорций */
+/* 	background-size:cover;
+	background-position: center; */
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover; 
+	/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
+		background-attachment:fixed; 
+	/* Цвет текста */
+	color:#fff;
+	/* Выравниваем текста внутри splash по центру */
+	text-align:center;
+	position: relative;	
+}
+
+.item {
+	min-height: 390px;	
+}
+/*ABOUT*/
+
+.about {
+	/* Отступ для содержимого, помещенного в splash */
+	padding-top: 36px;
+	min-height: 468px;
+	/* Цвет текста */
+	font-family: "ArialRegular";
+	ArialRegular
+	color:#000;
+	background-color: #eeeeee;
+}
+.about p {
+text-indent: 25px;
+}
+/*ABOUT END*/
+/*PARTNERS*/
+.partners {
+	/* Отступ для содержимого, помещенного в splash */
+	/* Цвет текста */
+	font-family: "ArialRegular";
+	ArialRegular
+	color:#000;
+	text-align:center;
+	background-color: #eeeeee;
+}
+/*PARTNERS END*/

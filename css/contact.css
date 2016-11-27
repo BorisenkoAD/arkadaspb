@@ -1,0 +1,40 @@
+.contact{
+		/* Отступ для содержимого, помещенного в splash */
+	padding-top: 36px;
+	min-height: 468px;
+	/* Цвет текста */
+	font-family: "MyriadProRegular";
+	color:#000;
+	background-color: #eeeeee;
+	padding-bottom: 15px;
+		text-align:center;
+}
+/* .vacancy p {
+text-indent: 25px;
+} */
+
+.title {
+	font-size: 35px;
+	color: #000;
+}
+.vacancyWindows {
+	padding: 10px 10px 10px 10px;
+	background-color: f3f3f3;
+	min-height: 57px;
+	min-width: 365px;
+	position: relative;	
+	box-shadow: 0 2px 4px #ababab;
+}
+.vacancyWindows .title {
+	font-family: "MyriadProSemiBold";
+	font-size: 14px;
+	color: #006abb;
+	text-align:left;
+}
+
+.vacancyWindows .text {
+	font-family: "MyriadProRegular";
+	font-size: 14px;
+	color: #000;
+	text-align:left;	
+}
