@@ -14,10 +14,10 @@
 text-indent: 25px;
 }
 .infoWindows {
-	height: 220px;
+	height: 235px;
     margin-right: 25px;
     margin-left: 25px;
-	margin-top: 27px;
+	margin-top: 25px;
 	box-shadow: 0 2px 4px #ababab;
 }
 
@@ -33,6 +33,8 @@ text-indent: 25px;
 	color: #fff;	
 }
 .infoWindows .infoBody {
+	text-align: justify;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	text-indent: 25px;
 }

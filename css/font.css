@@ -1,3 +1,7 @@
+ @font-face {
+    font-family: "Corsiva"; /* Название */
+    src: url("../fonts/Corsiva.ttf"); /* Путь к файлу */
+   }
  
 @font-face {
     font-family: "PTSansBold"; /* Название */
@@ -10,7 +14,7 @@
 
  @font-face {
 	font-family: "BrushScriptStd";
-	src: url("../fonts/BrushScriptStd/BrushScriptStd.eot");
+	src: url("../fonts/BrushScriptStd/BrushScriptStd.ttf");
 	src: local("BrushScriptStd"), url("../fonts/BrushScriptStd/BrushScriptStd.woff") format("woff"), url("../fonts/BrushScriptStd/BrushScriptStd.ttf") format("truetype");
 }
 /* font-family: "MyriadProRegular"; */

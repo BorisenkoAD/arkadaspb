@@ -17,24 +17,32 @@ text-indent: 25px;
 	font-size: 35px;
 	color: #000;
 }
-.vacancyWindows {
-	padding: 10px 10px 10px 10px;
-	background-color: f3f3f3;
-	min-height: 57px;
-	min-width: 365px;
-	position: relative;	
+.project p {
+text-indent: 25px;
+}
+.infoWindows {
+	height: 235px;
+    margin-right: 25px;
+    margin-left: 25px;
+	margin-top: 25px;
+	 margin-bottom: 20px;
 	box-shadow: 0 2px 4px #ababab;
 }
-.vacancyWindows .title {
-	font-family: "MyriadProSemiBold";
-	font-size: 14px;
-	color: #006abb;
-	text-align:left;
-}
 
-.vacancyWindows .text {
-	font-family: "MyriadProRegular";
-	font-size: 14px;
-	color: #000;
-	text-align:left;	
+.infoWindows .blueHeader {
+	height: 45px;
+	/* Картинка, которая используются для splash */
+	background-image:url(../img/searchWindowsHeader.png);
+	/* Масштабируем картинку с сохранением пропорций */
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "MyriadProRegular" !important;
+	font-size: 16px;
+	color: #fff;	
+}
+.infoWindows .infoBody {
+	text-align: justify;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-indent: 25px;
 }

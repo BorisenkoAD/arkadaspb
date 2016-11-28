@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
 });
 // каруселька партнеров	
 jQuery(document).ready(function() {		 
-	$("#owl-example").owlCarousel({	  
+	$("#owl-partners").owlCarousel({	  
 		autoPlay: 3000, //Set AutoPlay to 3 seconds	 
 		items : 4,
 		itemsDesktop : [1199,3],
