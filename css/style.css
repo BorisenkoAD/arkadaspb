@@ -21,6 +21,7 @@ a {
 	/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
 		background-attachment:fixed; 
 	/* Цвет текста */
+	text-shadow: 1px 1px 2px #000;
 	color:#fff;
 	/* Выравниваем текста внутри splash по центру */
 	text-align:center;
@@ -30,12 +31,14 @@ a {
 .nameOfCompany {
 	padding-left: 15px;
 	font-family: "BrushScriptStd" !important;
+	text-shadow: 1px 1px 2px #000;
 	font-size: 72px;
 	color: #fff;
 }
 
 .writeToUs {
 	font-family: "PTSansBold";
+	text-shadow: 1px 1px 2px #000;
 	font-size: 16px;	
 	color: #fff;
 }
@@ -55,6 +58,7 @@ a {
 	/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
 		background-attachment:fixed; 
 	/* Цвет текста */
+	text-shadow: 1px 1px 2px #000;
 	color:#fff;
 	/* Выравниваем текста внутри splash по центру */
 	text-align:center;
@@ -82,8 +86,9 @@ box-shadow: 0 2px 4px #001529;
 }
 .navigationText {
 	font-family: "MyriadProRegular" !important;
+	text-shadow: 1px 1px 2px #000;
 	font-size: 25px;
-	color: #fff;	
+	color: #fff;	 
 }
 
 /*HEADER BAR START*/
@@ -108,6 +113,7 @@ box-shadow: 0 2px 4px #001529;
 
 .characterOfCompany {
 	font-family: "BrushScriptStd";
+	text-shadow: 1px 1px 2px #000;
 	font-size: 100px;
 	color: #b1b1b1;	
 }
@@ -118,8 +124,10 @@ box-shadow: 0 2px 4px #001529;
 
 /*окно поиска*/
 .serchWindows {
+	margin-right: 25px;
+    margin-left: 25px;
 	height: 140px;
-	width: 273px;
+	/* width: 273px; */
 	margin-top: 27px;
 	box-shadow: 0 2px 4px #ababab;
 }
@@ -151,7 +159,7 @@ footer {
 		/* background-attachment:fixed;  */
 	/* Цвет текста */
 	color:#fff;
-
+	text-shadow: 1px 1px 2px #000;
 	font-family: "MyriadProRegular";
 	/* Выравниваем текста внутри splash по центру */
 	text-align:center;		
@@ -162,12 +170,15 @@ footer {
 box-shadow: 0 2px 4px #001529;	
 }
 .footerBoxText {
+	
 	font-size: 20px;
 }
 .footerBoxTextMenu {
+	text-shadow: 1px 1px 2px #000;
 	color: #a2b8c8;
 }
 .nameOfCompanyFooter {
+	text-shadow: 1px 1px 2px #000;
 	font-family: "BrushScriptStd" !important;
 	font-size: 30px;
 	color: #fff;

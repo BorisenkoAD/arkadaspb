@@ -12,6 +12,7 @@
 	/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
 		background-attachment:fixed; 
 	/* Цвет текста */
+	text-shadow: 2px 2px 4px #000;
 	color:#fff;
 	/* Выравниваем текста внутри splash по центру */
 	text-align:center;
@@ -20,6 +21,7 @@
 
 .item {
 	min-height: 390px;	
+	color: #dbefff;
 }
 /*ABOUT*/
 
@@ -29,8 +31,6 @@
 	min-height: 468px;
 	/* Цвет текста */
 	font-family: "ArialRegular";
-	ArialRegular
-	color:#000;
 	background-color: #eeeeee;
 }
 .about p {
@@ -42,8 +42,6 @@ text-indent: 25px;
 	/* Отступ для содержимого, помещенного в splash */
 	/* Цвет текста */
 	font-family: "ArialRegular";
-	ArialRegular
-	color:#000;
 	text-align:center;
 	background-color: #eeeeee;
 }
