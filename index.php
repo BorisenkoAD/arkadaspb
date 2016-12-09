@@ -1,3 +1,6 @@
+<?php
+include "dbLib.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,17 +26,15 @@
     <![endif]-->
 </head>
 <body>
-<div class="container" style="margin-top: 15px;">
+<div class="container">
 	<header>
 	<section class="header-top">
 		<div class="row">
 			<div class="col-sm-2">
-				<a href="\"><img src="img/logo.png" class="center-block" style="padding-top: 9px;"></a>
+				<a href="\"><img src="img/logo.png" class="center-block"></a>
 			</div>		
 			<div class="col-sm-4 text-left">
-			<div  style="padding-top: 9px;">
 				<a href="\"><span class="nameOfCompany">Arkada</span></a>
-			</div>
 			</div>
 			<div class="col-sm-6 text-right" style="padding-top: 31px; padding-right: 30px;">
 				<span class="writeToUs">Напишите нам</br><a href="mailto:info@arkadaspb.ru">info@arkadaspb.ru</a></span>
@@ -104,87 +105,101 @@
 	</section>
 	</header>
 </div>	
-<div class="container">
- 	<section class="contact">
-		<div class="row">
-			<div class="col-sm-8 text-left">
-				<h2 class="text-capitalize" style="padding-left: 15px;">Обратная связь</h2>
+<section class="reviews">
+	<div class="container">	
+		<div class="check-reviews"><h2>Отзывы на модерацию</h2>		
+ 		<div class="row padding-top-40 grid">		
+		<?php $stmt = $connection->query('SELECT * FROM reviews WHERE status = 0 AND deleted = 0 order by id desc');
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+			{?>
+			<div class="col-xs-6 col-sm-4 col-md-3 reviews-block-admin grid-item">
+				<div class="text">			
+				<p class="name text-left"><strong><?php echo $row["firstname"] ?></strong></p><p class="date text-left"><?php echo $row["date"] ?></p>		
+				<p class="text-justify"><?php echo $row["message"] ?></p>
+				</div>	
+				<div class="post_full_like_wrap">	
+					<div class="col-sm-3"></div>					
+					<div class="col-sm-2"><a id="tooltip" href="delete.php?id=<?php echo $row["id"]?>" title="Удалить"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"><a id="tooltip" href="post.php?id=<?php echo $row["id"]?>" title="Опубликовать на сайте"><i class="fa fa-hdd-o fa-2x" aria-hidden="true"></i></a></div>
+					<div class="col-sm-3"></div>					
+				</div>				
 			</div>
-			<div class="col-sm-4 text-left">
-				<h2 class="text-capitalize" style="padding-left: 15px;">Наши контакты</h2>			
-			</div>		
+			<?}?>
 		</div>
-		<div class="row">
-			<div class="col-sm-8 text-left">
-				<form class="form-horizontal" method="post" action="feed.php">
-				<div class="row">
-					<div class="form-group">
-						<label for="name" class="col-xs-4 control-label">Имя: <span style="color:red;">*</span></label>
-						<div class="col-xs-8">
-							<input type="text" class="form-control" required id="name" name="name" placeholder="Введите Имя">
-						</div>
-					</div>		
-					<div class="form-group">
-						<label for="email" class="col-xs-4 control-label">Адрес email: <span style="color:red;">*</span></label>
-						<div class="col-xs-8">
-							<input type="email" class="form-control" name="email" id="email" required placeholder="Введите email">
-						</div>
-					</div>		
-					<div class="form-group">
-						<label for="text" class="col-xs-4 control-label pull-left">Сообщение: <span style="color:red;">*</span></label>
-						<div class="col-xs-8">
-							<textarea class="form-control" required name="text" id="text" rows="6"></textarea>
-							<!-- <input type="textarea" class="form-control" id="inputMessage" placeholder="Введите email"> -->
-				<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Отправить</button>								
-						</div>
-					</div>					
+		</div>
+		<div class="public-reviews"><h2>Опубликованные отзывы</h2>	
+ 		<div class="row padding-top-40 grid">		
+		<?php $stmt = $connection->query('SELECT * FROM reviews WHERE status = 1 order by id desc');
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+			{?>
+			<div class="col-xs-6 col-sm-4 col-md-3 reviews-block-admin grid-item">
+				<div class="text">			
+					<p class="name text-left"><strong><?php echo $row["firstname"] ?></strong></p><p class="date text-left"><?php echo $row["date"] ?></p>		
+					<p class="text-justify"><?php echo $row["message"] ?></p>
+				</div>	
+				<div class="post_full_like_wrap">	
+					<div class="col-sm-3"></div>					
+					<div class="col-sm-2"><a id="tooltip" href="delete.php?id=<?php echo $row["id"]?>" title="Удалить"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"><a id="tooltip" href="post.php?id=<?php echo $row["id"]?>" title="Опубликовать на сайте"><i class="fa fa-hdd-o fa-2x" aria-hidden="true"></i></a></div>
+					<div class="col-sm-3"></div>					
 				</div>
-
-				</form>		
 			</div>
-			<div class="col-sm-4 text-left" style="padding-top: 36px;">
-				<div class="row" style="padding-top: 14px;">
-					<div class="col-sm-1"></div>
-					<div class="col-sm-2 text-center"><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color: #00589B;"></i></div>
-					<div class="col-sm-7 text-left">Санкт-Петербург, м. Ладожская, Проспект Косыгина, 21 лит. А</div>
-				</div>
-				<div class="row"  style="padding-top: 14px;">
-					<div class="col-sm-1"></div>
-					<div class="col-sm-2 text-center"><i class="fa fa-envelope fa-2x" aria-hidden="true" style="color: #00589B;"></i></div>
-					<div class="col-sm-7 text-left"><a href="mailto:info@arkadaspb.ru" style="text-shadow: 0px 0px 1px #000;">info@arkadaspb.ru</a></div>
-				</div>
-				<div class="row"  style="padding-top: 14px;">
-					<div class="col-sm-1"></div>
-					<div class="col-sm-2 text-center"><i class="fa fa-mobile fa-2x" aria-hidden="true" style="color: #00589B;"></i></div>
-					<div class="col-sm-7 text-left">8(812)577-24-99</div>
-				</div>			
-				<div class="row">
-					<div class="col-sm-1 text-left"></div>
-					<div class="col-sm-11 text-left">
-<!-- 						<div class="serchWindows">
-							<div class="blueHeader text-left">
-								<span style="padding-left: 15px;">Поиск по сайту</span>
-							</div>
-							<div class="searchBody text-left">
-									<span style="padding-left: 15px;">Введите слово для поиска</span>			
-								<div class="row">
-									<div class="col-xs-1"></div>
-									<div class="col-xs-7">
-										<input type="text" class="form-control input-sm" id="exampleInputSearch">
-									</div>
-									<div class="col-xs-3">
-										<button type="submit" class="btn btn-primary btn-sm">Поиск</button>
-									</div>
-									<div class="col-xs-1"></div>
-								</div>
-							</div>
-						</div>	 -->
-					</div>
-				</div>			
-			</div>			
+			<?}?>
+		</div>	
 		</div>
-	</section> 
-</div>
+		<div class="deleted-reviews"><h2>Удаленные отзывы</h2>
+ 		<div class="row padding-top-40 grid">		
+		<?php $stmt = $connection->query('SELECT * FROM reviews WHERE deleted = 1 order by id desc');
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+			{?>
+			<div class="col-xs-6 col-sm-4 col-md-3 reviews-block-admin grid-item">
+				<div class="text">			
+				<p class="name text-left"><strong><?php echo $row["firstname"] ?></strong></p><p class="date text-left"><?php echo $row["date"] ?></p>		
+				<p class="text-justify"><?php echo $row["message"] ?></p>
+				</div>	
+				<div class="post_full_like_wrap">	
+					<div class="col-sm-3"></div>					
+					<div class="col-sm-2"><a id="tooltip" href="delete.php?id=<?php echo $row["id"]?>" title="Удалить"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"><a id="tooltip" href="post.php?id=<?php echo $row["id"]?>" title="Опубликовать на сайте"><i class="fa fa-hdd-o fa-2x" aria-hidden="true"></i></a></div>
+					<div class="col-sm-3"></div>					
+				</div>				
+			</div>
+			<?}?>
+		</div>
+		</div>
+		<div class="question"><h2>Анкеты</h2>
+ 		<div class="row padding-top-40 grid">		
+		<?php $stmt = $connection->query('SELECT * FROM anketa WHERE deleted = 0 order by id desc');
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+			{?>
+			<div class="col-xs-6 col-sm-4 col-md-3 reviews-block-admin grid-item">
+				<div class="text">			
+				<p class="name text-left"><strong><?php echo $row["Name"]?> <?php echo $row["LastName"]?></strong></p>
+				<p class="date text-left"><strong><?php echo $row["Tel"]?></strong></p>
+				<p class="date text-left"><strong><a href="mailto:<?php echo $row["Email"]?>"><?php echo $row["Email"]?></a></strong></p>
+				<p class="age text-left"><strong>Возраст: <?php echo $row["age"] ?></strong></p>				
+				<p class="date text-left">Дата заполнения: <?php echo $row["date"]?></p>	
+				<p class="date text-left">На последнем м/р, мес.: в платной версии)))</p>				
+				<p class="text-left"><strong>Вакансия: </strong><?php echo $row["position"]?></p>
+				<p class="text-justify"><strong>Обязанности: </strong><?php echo $row["responsibilities"]?></p>
+				<p class="text-justify"><strong>Навыки: </strong><?php echo $row["skills"]?></p>
+				</div>	
+				<div class="post_full_like_wrap">	
+					<div class="col-sm-3"></div>					
+					<div class="col-sm-2"><a id="tooltip" href="delete_anketa.php?id=<?php echo $row["id"]?>" title="Удалить"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-3"></div>					
+				</div>				
+			</div>
+			<?}?>
+		</div>
+		</div>			
+	</div>
+</section>
 <div class="container">
 	<footer>
 		<div class="row" style="margin-left: 0px; margin-right: 0px; padding-top: 22px;">
@@ -241,9 +256,7 @@
 				8(812)577-24-99
 				</div>
 			</div>
-			<div class="col-sm-3">
-				<a href="\"><img src="img/logo.png" class="center-block" style="padding-top: 15px;"></a>
-			</div>				
+			
 		</div>		
 	</footer>
 </div>

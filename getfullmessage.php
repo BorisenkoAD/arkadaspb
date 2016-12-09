@@ -1,11 +1,16 @@
+<?php
+include "dbLib.php";
+$id = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Контакты</title>
+    <title>Отзывы о Компании АРКАДА</title>
 
     <!-- Bootstrap -->
     <link href="css/normalize.css" rel="stylesheet">	
@@ -13,7 +18,8 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/font.css">	
 	<link rel="stylesheet" href="css/style.css"> <!-- общие стили -->
-	<link rel="stylesheet" href="css/contact.css"> <!-- стили конкретной страницы -->
+	<link rel="stylesheet" href="css/rewiews.css"> <!-- стили конкретной страницы -->
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +29,66 @@
     <![endif]-->
 </head>
 <body>
-<div class="container" style="margin-top: 15px;">
+<!-- HTML-код модального окна -->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title form-heder">Ваш отзыв:</h4>
+      </div>
+      <!-- Основное содержимое модального окна -->
+      <div class="modal-body">
+        <!-- основное содержимое (тело) модального окна -->
+        <div class="container-fluid">
+          <!-- Контейнер, в котором можно создавать классы системы сеток -->
+	  		<form class="form-horizontal" action="reviews.php" method="post">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label for="lastname" class="col-xs-4 control-label">Фамилия:</label>
+						<div class="col-xs-8">
+							<input type="text" class="form-control" name="lastname" id="lastname" placeholder="Введите Фамилию">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="firstname" class="col-xs-4 control-label">Имя: <span style="color:red;">*</span></label>
+						<div class="col-xs-8">
+							<input type="text" class="form-control" name="firstname" required id="firstname" placeholder="Введите Имя">
+						</div>
+					</div>		
+					<div class="form-group">
+						<label for="email" class="col-xs-4 control-label">Адрес email:</label>
+						<div class="col-xs-8">
+							<input type="email" class="form-control" name="email" id="email" placeholder="Введите email">
+						</div>
+					</div>		
+				</div>
+				<div class="col-xs-6">
+					<div class="form-group center-block">
+						<label for="message" class="col-xs-0 control-label pull-left">Ваше сообщение: <span style="color:red;">*</span></label>
+						<div class="col-xs-8">
+							Осталось символов: <span id="counter">1000</span><br />
+							<textarea  id="my_area" class="form-control" required name="message" id="message" cols="30" rows="6" placeholder="Не более 1000 знаков." maxlength="1100" onkeyup="check()"></textarea>
+							<!-- <input type="textarea" class="form-control"  placeholder="Введите email"> -->
+						</div>
+					</div>			
+				</div>
+			</div>
+		</div>	  
+      <!-- Футер модального окна -->
+    <div class="modal-footer">
+	<!-- поля обозначенные * обязательны для заполнения<br> -->
+		<button type="submit" class="btn btn-primary">Отправить
+		</form>			
+    </div>
+    </div>
+  </div>
+</div>	
+</div>
+<!-- /HTML-код модального окна -->
+<div class="container">
 	<header>
 	<section class="header-top">
 		<div class="row">
@@ -70,18 +135,18 @@
 				</br><span class="navigationText">вакансии</span>	
 				</a>				
 			</div>
-			<div class="col-sm-2 navigationBox text-uppercase">
+			<div class="col-sm-2 navigationBoxActive text-uppercase">
 				<a href="rewiews.html">			
-				<span class="fa-stack fa-2x navigationIcon">
+				<span class="fa-stack fa-2x navigationIconActive">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-commenting fa-stack-1x"></i>
 				</span>	
 				</br><span class="navigationText">отзывы</span>		
 				</a>				
 			</div>
-			<div class="col-sm-2 navigationBoxActive text-uppercase">
+			<div class="col-sm-2 navigationBox text-uppercase">
 				<a href="contact.html">
-				<span class="fa-stack fa-2x navigationIconActive">
+				<span class="fa-stack fa-2x navigationIcon">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-envelope fa-stack-1x"></i>
 				</span>	
@@ -94,94 +159,45 @@
 	<section class="header-bar">		
 		<div class="row">
 			<div class="col-sm-2">
-				<span class="characterOfCompany">K</span>
+				<span class="characterOfCompany">O</span>
 			</div>
 			<div class="col-sm-10">
-				<h2><p class="text-left">Ждем от Вас <span class="blueNameCompany">Предложений о сотрудничестве!</span></p></h2>
-				<p class="text-left">Вы можете связаться с нами, заполнив специальную форму или используя контактные данные. Мы ждём от Вас предложений по улучшению нашей работы или предложений о сотрудничестве. </p>
+				<h2><p class="text-left">Здесь вы можете оставить <span class="blueNameCompany">Свой Отзыв о Компании!</span></p></h2>
+				<p class="text-left">Вы можете прочитать, что думают о Компании сотрудники и партнёры. А также оставить своё мнение о работе или сотрудничестве с ООО Аркада. С нетерпением ждём Ваших отзывов!</p>
 			</div>
 		</div>
 	</section>
 	</header>
 </div>	
 <div class="container">
- 	<section class="contact">
-		<div class="row">
-			<div class="col-sm-8 text-left">
-				<h2 class="text-capitalize" style="padding-left: 15px;">Обратная связь</h2>
-			</div>
-			<div class="col-sm-4 text-left">
-				<h2 class="text-capitalize" style="padding-left: 15px;">Наши контакты</h2>			
-			</div>		
-		</div>
-		<div class="row">
-			<div class="col-sm-8 text-left">
-				<form class="form-horizontal" method="post" action="feed.php">
-				<div class="row">
-					<div class="form-group">
-						<label for="name" class="col-xs-4 control-label">Имя: <span style="color:red;">*</span></label>
-						<div class="col-xs-8">
-							<input type="text" class="form-control" required id="name" name="name" placeholder="Введите Имя">
-						</div>
-					</div>		
-					<div class="form-group">
-						<label for="email" class="col-xs-4 control-label">Адрес email: <span style="color:red;">*</span></label>
-						<div class="col-xs-8">
-							<input type="email" class="form-control" name="email" id="email" required placeholder="Введите email">
-						</div>
-					</div>		
-					<div class="form-group">
-						<label for="text" class="col-xs-4 control-label pull-left">Сообщение: <span style="color:red;">*</span></label>
-						<div class="col-xs-8">
-							<textarea class="form-control" required name="text" id="text" rows="6"></textarea>
-							<!-- <input type="textarea" class="form-control" id="inputMessage" placeholder="Введите email"> -->
-				<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Отправить</button>								
-						</div>
-					</div>					
-				</div>
+ 	<section class="rewiews">
 
-				</form>		
-			</div>
-			<div class="col-sm-4 text-left" style="padding-top: 36px;">
-				<div class="row" style="padding-top: 14px;">
+		<div class="row" style="padding-top: 10px;  padding-bottom: 10px;">
+
+			<?php $stmt = $connection->prepare('SELECT * FROM reviews WHERE id = ?');
+			$stmt->bindValue(1, $id, PDO::PARAM_INT);
+			$stmt->execute();
+			$row = $stmt->fetch(PDO::FETCH_ASSOC)?>		
+			
 					<div class="col-sm-1"></div>
-					<div class="col-sm-2 text-center"><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color: #00589B;"></i></div>
-					<div class="col-sm-7 text-left">Санкт-Петербург, м. Ладожская, Проспект Косыгина, 21 лит. А</div>
-				</div>
-				<div class="row"  style="padding-top: 14px;">
-					<div class="col-sm-1"></div>
-					<div class="col-sm-2 text-center"><i class="fa fa-envelope fa-2x" aria-hidden="true" style="color: #00589B;"></i></div>
-					<div class="col-sm-7 text-left"><a href="mailto:info@arkadaspb.ru" style="text-shadow: 0px 0px 1px #000;">info@arkadaspb.ru</a></div>
-				</div>
-				<div class="row"  style="padding-top: 14px;">
-					<div class="col-sm-1"></div>
-					<div class="col-sm-2 text-center"><i class="fa fa-mobile fa-2x" aria-hidden="true" style="color: #00589B;"></i></div>
-					<div class="col-sm-7 text-left">8(812)577-24-99</div>
-				</div>			
-				<div class="row">
-					<div class="col-sm-1 text-left"></div>
-					<div class="col-sm-11 text-left">
-<!-- 						<div class="serchWindows">
-							<div class="blueHeader text-left">
-								<span style="padding-left: 15px;">Поиск по сайту</span>
-							</div>
-							<div class="searchBody text-left">
-									<span style="padding-left: 15px;">Введите слово для поиска</span>			
-								<div class="row">
-									<div class="col-xs-1"></div>
-									<div class="col-xs-7">
-										<input type="text" class="form-control input-sm" id="exampleInputSearch">
-									</div>
-									<div class="col-xs-3">
-										<button type="submit" class="btn btn-primary btn-sm">Поиск</button>
-									</div>
-									<div class="col-xs-1"></div>
-								</div>
-							</div>
-						</div>	 -->
+					<div class="col-sm-10" style="text-align:left;">
+			<span class="title"><?php echo $row["firstname"]?></span></br>
+					<span class="title" style="	text-align:left;"><?php echo $row["date"] ?>
+
+					<div class="text-left" style="text-align: justify; text-indent: 25px; padding-left: 15px; padding-right: 15px;">
+							<span class="p2"><?php echo $row["message"]?></span>
+					</div>	
 					</div>
-				</div>			
-			</div>			
+					<div class="col-sm-1">
+
+					</div>
+			
+
+		</div>
+		<div class="row" style="padding-top: 10px;  padding-bottom: 10px;">
+		<div class="col-sm-9"></div>
+		<div class="col-sm-2">
+		<button type="submit" class="btn btn-primary" onclick="history.back();" value="Назад"/>Назад</div>
 		</div>
 	</section> 
 </div>
@@ -243,7 +259,7 @@
 			</div>
 			<div class="col-sm-3">
 				<a href="\"><img src="img/logo.png" class="center-block" style="padding-top: 15px;"></a>
-			</div>				
+			</div>			
 		</div>		
 	</footer>
 </div>
@@ -252,8 +268,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-	<script src="libs/owl-carousel/owl.carousel.js"></script>
 	<script src="js/jquery.scrollUp.min.js" type="text/javascript"></script>	
 	<script src="js/myscripts.js" type="text/javascript"></script>	
+	
   </body>
 </html>

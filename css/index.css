@@ -28,7 +28,7 @@
 .about {
 	/* Отступ для содержимого, помещенного в splash */
 	padding-top: 36px;
-	min-height: 468px;
+	/* min-height: 468px; */
 	/* Цвет текста */
 	font-family: "ArialRegular";
 	background-color: #eeeeee;
@@ -39,9 +39,11 @@ text-indent: 25px;
 /*ABOUT END*/
 /*PARTNERS*/
 .partners {
+	min-height: 200px;
 	/* Отступ для содержимого, помещенного в splash */
 	/* Цвет текста */
 	font-family: "ArialRegular";
+
 	text-align:center;
 	background-color: #eeeeee;
 }

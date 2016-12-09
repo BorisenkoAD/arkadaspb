@@ -6,12 +6,12 @@
 	font-family: "MyriadProRegular";
 	color:#000;
 	background-color: #eeeeee;
+	font-family: "MyriadProRegular";
+	font-size: 15px;
 	padding-bottom: 15px;
-		text-align:center;
+	text-align:center;
 }
-/* .vacancy p {
-text-indent: 25px;
-} */
+
 
 .title {
 	font-size: 35px;
@@ -45,4 +45,9 @@ text-indent: 25px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	text-indent: 25px;
+}
+.p2 {
+font-size: 20px;
+text-indent: 25px;
+text-align: justify;
 }
