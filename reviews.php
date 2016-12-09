@@ -4,17 +4,20 @@ $res = $connection->prepare("INSERT INTO reviews
 												(lastname,
 												firstname,
 												email,
-												message)
+												message,
+												ip)
 										VALUES	
 												(:lastname,
 												:firstname,
 												:email,
-												:message)"
+												:message,
+												:ip)"
 							);
 	$res->bindParam(':firstname', $firstname);
 	$res->bindParam(':lastname', $lastname);
 	$res->bindParam(':email', $email);
 	$res->bindParam(':message', $message);
+	$res->bindParam(':ip', $ip);	
 	
 try 
 {
@@ -22,11 +25,11 @@ $firstname = substr(htmlspecialchars(trim($_POST['firstname'])), 0, 25);
 $lastname= substr(htmlspecialchars(trim($_POST['lastname'])), 0, 50);
 $email= substr(htmlspecialchars(trim($_POST['email'])), 0, 50);
 $message= substr(trim(nl2br($_POST['message'])), 0, 1100);
-
+$ip = $_SERVER['REMOTE_ADDR'];
 $res->execute();
 
-$mess = $message." www.arkadaspb.ru/admin/";
-$subj = "Отзыв с сайта www.arkadaspb.ru/admin/";
+$mess = $message." отправлено с IP ".$ip." www.arkadaspb.ru/admin/";
+$subj = "Отзыв с сайта www.arkadaspb.ru";
 $to = "info@arkadaspb.ru"; 
 $from="admin@arkadaspb.ru";
 $headers = "From: $from\nReply-To: $from\n";
