@@ -174,7 +174,7 @@ include "dbLib.php";
 			<span class="title">О нас говорят</span>
 		<div class="row" style="padding-top: 10px;  padding-bottom: 10px;">
 		<div id="owl-reviews" class="owl-carousel">
-			<?php $stmt = $connection->query('SELECT * FROM reviews WHERE status = 1 ORDER BY date');
+			<?php $stmt = $connection->query('SELECT * FROM reviews WHERE status = 1 AND arkada = 1 ORDER BY date');
 			while($row = $stmt->fetch(PDO::FETCH_ASSOC))
 			{ 
 				?>		
